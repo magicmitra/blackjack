@@ -81,3 +81,5 @@ function game() {
 }
 
 game();
+
+// skrt
