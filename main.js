@@ -74,10 +74,10 @@ function getWinner(player, dealer) {
 }
 
 
-function test() {
+function game() {
   const x = new GameState();
   x.deal();
   x.getTotal();
 }
 
-test();
+game();
