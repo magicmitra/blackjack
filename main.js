@@ -75,11 +75,12 @@ function getWinner(player, dealer) {
 
 
 function game() {
-  const x = new GameState();
-  x.deal();
-  x.getTotal();
+  const currGame = new GameState();
+  currGame.deal();
+  currGame.getTotal();
 }
 
 game();
 
 // skrt
+//
