@@ -1,3 +1,10 @@
+// readline logic
+const readline = require('readline');
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
 // variables
 const suits = ['♠', '♣', '♥', '♦'];
 const weights = [2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11];
@@ -75,9 +82,24 @@ function getWinner(player, dealer) {
 
 
 function game() {
-  const currGame = new GameState();
-  currGame.deal();
-  currGame.getTotal();
+  console.log('Welcone to BlackJack');
+  round();
+}
+
+function round() {
+  rl.question(`Press A-Z or 2-0 to keep playing, '1' to stop: `, (answer) => {
+    if(answer === '1') {
+      // stop playing
+      console.log('you quit the game');
+      rl.close();
+      return;
+    } else {
+      const x = new GameState();
+      x.deal();
+      x.getTotal();
+    }
+    round();
+  });
 }
 
 game();
